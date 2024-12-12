@@ -29,6 +29,18 @@ class MyApp extends StatelessWidget {
           child: MainPage(),
         ),
       ),
+      GoRoute(
+        path: '/login',
+        builder: (context, state) => MultiBlocProvider(
+          providers: [
+            BlocProvider(
+              create: (context) => sl<UserBloc>(),
+            ),
+          ],
+          // child: MainPage(),
+          child: MainPage(),
+        ),
+      ),
     ],
   );
 
