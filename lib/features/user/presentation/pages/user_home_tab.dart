@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class UserHomeTab extends StatelessWidget {
   @override
@@ -7,6 +8,11 @@ class UserHomeTab extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
+          TextButton(
+              onPressed: () {
+                context.go("/login");
+              },
+              child: Text("Login")),
           Icon(
             Icons.home,
             size: 100,

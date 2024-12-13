@@ -1,7 +1,9 @@
 import 'package:dartz/dartz.dart';
+import 'package:flutter/material.dart';
 import '../../../../core/errors/failures.dart';
 import '../entities/user.dart';
 
+@factory
 abstract class UserRepository {
   // Metode untuk mengambil semua user
   Future<Either<Failure, List<User>>> getUsers(

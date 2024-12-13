@@ -2,7 +2,9 @@ import 'package:dartz/dartz.dart';
 import 'package:flutter_skeleton_bloc_clean/core/errors/failures.dart';
 import 'package:flutter_skeleton_bloc_clean/features/user/domain/entities/user.dart';
 import 'package:flutter_skeleton_bloc_clean/features/user/domain/repositories/user_repository.dart';
+import 'package:injectable/injectable.dart';
 
+@injectable
 class GetUsersUseCase {
   final UserRepository repository;
 

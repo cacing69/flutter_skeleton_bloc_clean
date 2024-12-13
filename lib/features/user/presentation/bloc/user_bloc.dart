@@ -2,6 +2,7 @@ import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter_skeleton_bloc_clean/features/user/domain/entities/user.dart';
 import 'package:flutter_skeleton_bloc_clean/features/user/domain/usecases/get_users_use_case.dart';
+import 'package:injectable/injectable.dart';
 // import 'package:user_management_app/features/user_management/domain/usecases/get_users.dart';
 // import 'package:user_management_app/features/user_management/domain/usecases/add_user.dart';
 // import 'package:user_management_app/features/user_management/domain/usecases/update_user.dart';
@@ -10,6 +11,7 @@ import 'package:flutter_skeleton_bloc_clean/features/user/domain/usecases/get_us
 part 'user_event.dart';
 part 'user_state.dart';
 
+@injectable
 class UserBloc extends Bloc<UserEvent, UserState> {
   final GetUsersUseCase getUsersUseCase;
   int currentPage = 1; // Menyimpan halaman saat ini

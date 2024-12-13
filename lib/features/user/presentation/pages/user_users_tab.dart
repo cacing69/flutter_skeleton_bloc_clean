@@ -18,7 +18,7 @@ class _UserUsersTabState extends State<UserUsersTab> {
           _scrollController.position.maxScrollExtent) {
         // Ketika mencapai bagian bawah, ambil halaman berikutnya
         // context.read<UserBloc>().add(FetchNextPageEvent());
-        print("SCROL NJIR");
+        print("end_of_area");
       }
     });
   }
@@ -69,8 +69,7 @@ class _UserUsersTabState extends State<UserUsersTab> {
                       itemBuilder: (context, index) {
                         return ListTile(
                           title: Text(
-                              "${(index + 1)} ${state.users[index].firstName}" ??
-                                  "-"),
+                              "${(index + 1)} ${state.users[index].firstName}"),
                         );
                       },
                     ),
@@ -89,18 +88,21 @@ class _UserUsersTabState extends State<UserUsersTab> {
           ))
         ],
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          // print("clicked : RefreshUsersEvent");
-          // context.read<UserBloc>().add(RefreshUsersEvent());
-          context.read<UserBloc>().add(FetchNextPageEvent());
-          // showDialog(
-          //   context: context,
-          //   // builder: (c ontext) => AddUserDialog(),
-          //   // builder: (context) => true),
-          // );
+      floatingActionButton: BlocBuilder<UserBloc, UserState>(
+        builder: (context, state) {
+          // Tampilkan FAB hanya jika state adalah UserLoadedState
+          if (state is UserLoadedState) {
+            return FloatingActionButton(
+              onPressed: () {
+                context.read<UserBloc>().add(FetchNextPageEvent());
+              },
+              child: Icon(Icons.navigate_next),
+            );
+          } else {
+            return SizedBox
+                .shrink(); // Tidak menampilkan FAB jika bukan UserLoadedState
+          }
         },
-        child: Icon(Icons.navigate_next),
       ),
     );
   }

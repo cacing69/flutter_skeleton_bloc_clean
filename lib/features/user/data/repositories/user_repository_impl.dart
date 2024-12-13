@@ -4,7 +4,9 @@ import 'package:flutter_skeleton_bloc_clean/core/network/network_info.dart';
 import 'package:flutter_skeleton_bloc_clean/features/user/data/datasources/remote_user_data_source.dart';
 import 'package:flutter_skeleton_bloc_clean/features/user/domain/entities/user.dart';
 import 'package:flutter_skeleton_bloc_clean/features/user/domain/repositories/user_repository.dart';
+import 'package:injectable/injectable.dart';
 
+@LazySingleton(as: UserRepository)
 class UserRepositoryImpl implements UserRepository {
   final RemoteUserDataSource remoteDataSource;
   // final LocalUserDataSource localDataSource;

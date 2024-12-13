@@ -1,5 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:flutter_skeleton_bloc_clean/features/user/data/models/user_response.dart';
+import 'package:injectable/injectable.dart';
 import 'package:retrofit/retrofit.dart';
 import '../models/user_model.dart';
 
@@ -7,7 +8,9 @@ part 'remote_user_data_source.g.dart';
 
 // Remote Data Source (API)
 @RestApi(baseUrl: 'https://dummyjson.com')
+@injectable
 abstract class RemoteUserDataSource {
+  @factoryMethod
   factory RemoteUserDataSource(Dio dio) = _RemoteUserDataSource;
 
   @GET("/users")

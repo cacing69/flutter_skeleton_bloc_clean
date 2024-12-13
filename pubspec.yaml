@@ -40,6 +40,7 @@ dependencies:
   retrofit: ^4.0.1
   json_annotation: ^4.8.0
   logger: ^1.1.0
+  injectable: ^2.0.0
 
 
   # The following adds the Cupertino Icons font to your application.
@@ -61,6 +62,7 @@ dev_dependencies:
   build_runner: ^2.4.6
   retrofit_generator: ^7.0.8
   json_serializable: ^6.0.0
+  injectable_generator: ^2.0.0
   test: any
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

@@ -26,7 +26,7 @@ echo "Creating feature..."
 yes | cp -rf "$stubs_path/"* "$feature_target_path"
 
 # creating feature page
-old_page_path="$feature_target_path/presentation/pages/feature_page.dart"
+old_page_path="$feature_target_path/presentation/pages/stub_page"
 new_page_path="$feature_target_path/presentation/pages/${feature_name}_page.dart"
 if [ -f "$old_page_path" ]; then
   mv "$old_page_path" "$new_page_path"
