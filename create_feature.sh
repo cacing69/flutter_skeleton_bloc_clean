@@ -2,16 +2,14 @@
 # Module generator by @cacing69
 
 # Get the first argument
-# feature_name=$1
+feature_name=$1
 
-# # Check if the argument is provided
-# if [ -z "$feature_name" ]; then
-#   echo "No argument provided."
-#   exit 1  # Exit with status 1 if no argument is passed
-# fi
+# Check if the argument is provided
+if [ -z "$feature_name" ]; then
+  # Ambil nama fitur dari pengguna
+  read -p "Insert feature name: " feature_name
+fi
 
-# Ambil nama fitur dari pengguna
-read -p "Insert feature name: " feature_name
 
 # create with argument name on /lib/features
 dir_feature_name="$(pwd)/lib/features/"
@@ -32,7 +30,7 @@ if [ -f "$old_page_path" ]; then
   mv "$old_page_path" "$new_page_path"
   echo "Renamed feature_page.dart to ${feature_name}_page.dart"
 else
-  echo "Error: File feature_page.dart tidak ditemukan di $old_page_path"
+  echo "Error: File feature_page.dart not found at $old_page_path"
   exit 1
 fi
 
