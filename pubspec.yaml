@@ -41,12 +41,17 @@ dependencies:
   json_annotation: ^4.8.0
   logger: ^1.1.0
   injectable: ^2.0.0
+  loggy: ^2.0.2
 
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.8
   internet_connection_checker: ^1.0.0+1
+  mobile_device_identifier:
+    git:
+      url: https://github.com/stilus-tayyipguzel/mobile_device_identifier.git
+      ref: master # atau branch lain, seperti 'master' atau tag tertentu
 
 dev_dependencies:
   flutter_test:

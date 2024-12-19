@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_skeleton_bloc_clean/features/user/presentation/bloc/user_bloc.dart';
+import 'package:loggy/loggy.dart';
 
 class UserUsersTab extends StatefulWidget {
   @override
@@ -32,7 +33,7 @@ class _UserUsersTabState extends State<UserUsersTab> {
 
   Future<void> _refreshUsers() async {
     // context.read<UserBloc>().add(FetchUsersEvent());
-    print("_refreshUsers");
+    logInfo("_refreshUsers");
   }
 
   final ScrollController _scrollController =
